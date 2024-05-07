@@ -22,7 +22,8 @@ public class CrudApplication {
 		return args -> {
 //			findAllGuests(guestDAO);
 //			addGuest(guestDAO);
-			addMultipleGuests(guestDAO);
+//			addMultipleGuests(guestDAO);
+			findById(guestDAO);
 		};
 	}
 
@@ -52,5 +53,10 @@ public class CrudApplication {
 		System.out.println(ful);
 		System.out.println(bel);
 		System.out.println(sic);
+	}
+
+	private void findById(GuestDAO guestDAO) {
+		Guest foundGuest = guestDAO.findById(3);
+		System.out.println(foundGuest);
 	}
 }

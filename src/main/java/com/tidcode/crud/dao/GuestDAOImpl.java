@@ -32,4 +32,9 @@ public class GuestDAOImpl implements GuestDAO {
 		return this.entityManager.merge(guest);
 	}
 
+	@Override
+	public Guest findById(int id) {
+		return this.entityManager.find(Guest.class, id);
+	}
+
 }
