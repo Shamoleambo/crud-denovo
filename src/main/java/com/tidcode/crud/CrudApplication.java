@@ -1,9 +1,14 @@
 package com.tidcode.crud;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import com.tidcode.crud.entity.Guest;
+import com.tidcode.crud.service.GuestDAO;
 
 @SpringBootApplication
 public class CrudApplication {
@@ -13,9 +18,17 @@ public class CrudApplication {
 	}
 
 	@Bean
-	public CommandLineRunner run() {
+	public CommandLineRunner run(GuestDAO guestDAO) {
 		return args -> {
-			System.out.println("Do we even?");
+			findAllGuests(guestDAO);
 		};
+	}
+
+	private void findAllGuests(GuestDAO guestDAO) {
+		List<Guest> guests = guestDAO.findAll();
+
+		for (Guest guest : guests) {
+			System.out.println(guest);
+		}
 	}
 }
