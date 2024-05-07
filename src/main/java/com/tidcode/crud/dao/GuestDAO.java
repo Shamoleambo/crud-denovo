@@ -1,4 +1,4 @@
-package com.tidcode.crud.service;
+package com.tidcode.crud.dao;
 
 import java.util.List;
 

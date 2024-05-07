@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.tidcode.crud.dao.GuestDAO;
 import com.tidcode.crud.entity.Guest;
-import com.tidcode.crud.service.GuestDAO;
 
 @SpringBootApplication
 public class CrudApplication {
