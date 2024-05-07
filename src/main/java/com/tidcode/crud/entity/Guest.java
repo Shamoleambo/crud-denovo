@@ -22,6 +22,10 @@ public class Guest {
 	@Column
 	private String email;
 
+	public Guest() {
+
+	}
+
 	public Guest(String firstName, String lastName, Boolean confirmed, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -67,6 +71,12 @@ public class Guest {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Guest [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", confirmed=" + confirmed
+				+ ", email=" + email + "]";
 	}
 
 }
