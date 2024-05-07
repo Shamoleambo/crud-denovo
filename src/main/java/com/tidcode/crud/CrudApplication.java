@@ -20,7 +20,8 @@ public class CrudApplication {
 	@Bean
 	public CommandLineRunner run(GuestDAO guestDAO) {
 		return args -> {
-			findAllGuests(guestDAO);
+//			findAllGuests(guestDAO);
+			addGuest(guestDAO);
 		};
 	}
 
@@ -30,5 +31,11 @@ public class CrudApplication {
 		for (Guest guest : guests) {
 			System.out.println(guest);
 		}
+	}
+	
+	private void addGuest(GuestDAO guestDAO) {
+		Guest newGuest = new Guest("Mano", "Silva", true, "mano@mail.com");
+		Guest mano = guestDAO.save(newGuest);
+		System.out.println(mano);
 	}
 }

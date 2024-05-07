@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.tidcode.crud.entity.Guest;
 
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 
 @Repository
 public class GuestDAOImpl implements GuestDAO {
@@ -20,8 +21,15 @@ public class GuestDAOImpl implements GuestDAO {
 		this.entityManager = entityManager;
 	}
 
+	@Override
 	public List<Guest> findAll() {
 		return this.entityManager.createQuery("FROM Guest", Guest.class).getResultList();
+	}
+
+	@Override
+	@Transactional
+	public Guest save(Guest guest) {
+		return this.entityManager.merge(guest);
 	}
 
 }
