@@ -38,8 +38,8 @@ public class GuestDAOImpl implements GuestDAO {
 	}
 
 	@Override
-	public List<Guest> findAllOrderByFirstName() {
-		return this.entityManager.createQuery("FROM Guest ORDER BY firstName", Guest.class).getResultList();
+	public List<Guest> findAllOrderBy(String orderCriteria) {
+		return this.entityManager.createQuery("FROM Guest ORDER BY " + orderCriteria, Guest.class).getResultList();
 	}
 
 }

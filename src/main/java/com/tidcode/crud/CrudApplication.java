@@ -62,7 +62,7 @@ public class CrudApplication {
 	}
 	
 	private void findAllOrderByFirstName(GuestDAO guestDAO) {
-		List<Guest> guests = guestDAO.findAllOrderByFirstName();
+		List<Guest> guests = guestDAO.findAllOrderBy("firstName");
 		
 		for(Guest guest : guests) {
 			System.out.println(guest);
