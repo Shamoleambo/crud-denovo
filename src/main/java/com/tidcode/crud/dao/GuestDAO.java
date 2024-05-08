@@ -10,4 +10,5 @@ public interface GuestDAO {
 	Guest save(Guest guest);
 	Guest findById(int id);
 	List<Guest> findAllOrderBy(String orderCriteria);
+	Guest update(Guest guest);
 }

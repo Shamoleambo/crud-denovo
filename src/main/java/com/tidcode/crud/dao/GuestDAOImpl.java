@@ -41,5 +41,11 @@ public class GuestDAOImpl implements GuestDAO {
 	public List<Guest> findAllOrderBy(String orderCriteria) {
 		return this.entityManager.createQuery("FROM Guest ORDER BY " + orderCriteria, Guest.class).getResultList();
 	}
+	
+	@Override
+	@Transactional
+	public Guest update(Guest guest) {
+		return this.entityManager.merge(guest);
+	}
 
 }
