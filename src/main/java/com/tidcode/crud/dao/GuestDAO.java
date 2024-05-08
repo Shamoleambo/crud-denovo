@@ -11,4 +11,5 @@ public interface GuestDAO {
 	Guest findById(int id);
 	List<Guest> findAllOrderBy(String orderCriteria);
 	Guest update(Guest guest);
+	List<Guest> findByLastName(String lastName);
 }

@@ -25,7 +25,8 @@ public class CrudApplication {
 //			addMultipleGuests(guestDAO);
 //			findById(guestDAO);
 //			findAllOrderByFirstName(guestDAO);
-			updateGuest(guestDAO);
+//			updateGuest(guestDAO);
+			listAllByLastName(guestDAO);
 		};
 	}
 
@@ -75,5 +76,12 @@ public class CrudApplication {
 		guest.setId(3L);
 		Guest updtGuest = guestDAO.update(guest);
 		System.out.println(updtGuest);
+	}
+
+	private void listAllByLastName(GuestDAO guestDAO) {
+		List<Guest> guests = guestDAO.findByLastName("Dahora");
+		for (Guest guest : guests) {
+			System.out.println(guest);
+		}
 	}
 }
