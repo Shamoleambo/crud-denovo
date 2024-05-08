@@ -9,4 +9,5 @@ public interface GuestDAO {
 	List<Guest> findAll();
 	Guest save(Guest guest);
 	Guest findById(int id);
+	List<Guest> findAllOrderByFirstName();
 }
