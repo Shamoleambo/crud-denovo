@@ -26,7 +26,8 @@ public class CrudApplication {
 //			findById(guestDAO);
 //			findAllOrderByFirstName(guestDAO);
 //			updateGuest(guestDAO);
-			listAllByLastName(guestDAO);
+//			listAllByLastName(guestDAO);
+			deleteGuest(guestDAO);
 		};
 	}
 
@@ -83,5 +84,9 @@ public class CrudApplication {
 		for (Guest guest : guests) {
 			System.out.println(guest);
 		}
+	}
+	
+	private void deleteGuest(GuestDAO guestDAO) {
+		guestDAO.delete(1);
 	}
 }

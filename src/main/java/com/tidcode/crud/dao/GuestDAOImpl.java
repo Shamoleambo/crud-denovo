@@ -55,5 +55,12 @@ public class GuestDAOImpl implements GuestDAO {
 		query.setParameter("lastName", lastName);
 		return query.getResultList();
 	}
+	
+	@Override
+	@Transactional
+	public void delete(int id) {
+		Guest guest = this.findById(id);
+		this.entityManager.remove(guest);
+	}
 
 }

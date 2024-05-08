@@ -12,4 +12,5 @@ public interface GuestDAO {
 	List<Guest> findAllOrderBy(String orderCriteria);
 	Guest update(Guest guest);
 	List<Guest> findByLastName(String lastName);
+	void delete(int id);
 }
